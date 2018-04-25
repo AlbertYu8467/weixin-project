@@ -1,8 +1,8 @@
 <template>
   <div class="header">
       <div class="header-name">{{this.title}}</div>
-      <div class="add-friend">
-          <i class="iconfont icon-mn_tianjiahaoyou"></i>
+      <div class="add-friend" v-if="this.title == '通讯录' ">
+          <i class="iconfont icon-jia"></i>
       </div>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
     .add-friend {
         position: absolute;
         top: 25%;
-        right: 1vh;
+        right: 1vw;
         width: 30px;
         height: 30px;
         line-height: 30px;

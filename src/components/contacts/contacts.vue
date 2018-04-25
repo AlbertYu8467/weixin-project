@@ -1,16 +1,23 @@
 <template>
-  <div class="wx">
-    <p>{{msg}}</p>
+  <div class="contacts">
+      <cap></cap>
+      <person-item></person-item>
   </div>
 </template>
 
 <script>
+import personItem from '@/components/contacts/personItem'
+import cap from '@/components/contacts/cap'
 export default {
   name: 'Contacts',
   data () {
     return {
       msg: 'Welcome to Contacts'
     }
+  },
+  components:{
+     personItem,
+     cap
   }
 }
 </script>
