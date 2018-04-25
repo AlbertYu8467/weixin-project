@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-      <div class="header-name">{{title}}</div>
+      <div class="header-name">{{this.title}}</div>
       <div class="add-friend">
           <i class="iconfont icon-mn_tianjiahaoyou"></i>
       </div>
@@ -8,11 +8,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data(){
       return {
-         title:"通讯录"
+         msg:['a']
       }
+  },
+  computed:{
+      ...mapState([
+          'title'
+      ])
+  },
+  mounted(){
+      
   }
 }
 </script>

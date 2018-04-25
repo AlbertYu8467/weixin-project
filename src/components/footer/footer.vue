@@ -1,29 +1,48 @@
 <template>
   <ul class="footer">
-    <router-link to='/weixin' tag="li">
+    <li @click="jump('weixin','微信')" :class="[isActive == 'weixin' ? 'active':'']">
         <i class="iconfont icon-wechat"></i>
         <a>微信</a>
-    </router-link>
-    <router-link to='/contacts' tag="li">
+    </li>
+    <li @click="jump('contacts','通讯录')" :class="[isActive == 'contacts' ? 'active':'']">
         <i class="iconfont icon-tongxunlu"></i>
         <a>通讯录</a>
-    </router-link>
-    <router-link to='/find' tag="li">
+    </li>
+    <li @click="jump('find','发现')" :class="[isActive == 'find' ? 'active':'']">
         <i class="iconfont icon-faxian"></i>
         <a>发现</a>
-    </router-link>
-    <router-link to='/mine' tag="li">
+    </li>
+    <li @click="jump('mine','我')" :class="[isActive == 'mine' ? 'active':'']">
         <i class="iconfont icon-wo"></i>
         <a>我</a>
-    </router-link>
+    </li>
   </ul>
 </template>
 <script>
+import { mapMutations, mapState, mapActions } from 'vuex'
 export default {
   data(){
       return {
-          msg:'aa'
+          isActive:'weixin'
       }
+  },
+  computed:{
+      ...mapState([
+          'title'
+      ])
+  },
+  methods:{
+      ...mapActions([
+          'changeTitle'
+      ]),
+      jump(path,title){
+          this.isActive = path
+          this.$router.push(path)
+          this.$store.commit('changeTitle',title)
+      }
+  },
+  mounted(){
+    
   }
 }
 </script>
@@ -53,6 +72,12 @@ export default {
     }
     .footer a {
         font-size: 12px;
+    }
+    li.active {
+        color:#17B315
+    }
+    li.active a {
+        color:#17B315
     }
 </style>
 
