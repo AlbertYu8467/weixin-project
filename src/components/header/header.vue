@@ -2,6 +2,9 @@
   <div class="header">
       <div class="header-name">{{this.title}}</div>
       <div class="add-friend" v-if="this.title == '通讯录' ">
+          <i class="iconfont icon-mn_tianjiahaoyou"></i>
+      </div>
+      <div class="add-friend" v-else-if="this.title == '微信' ">
           <i class="iconfont icon-jia"></i>
       </div>
   </div>

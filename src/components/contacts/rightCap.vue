@@ -8,7 +8,7 @@
 export default {
   data(){
     return {
-      capList:[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+      capList:[...'ABCDEFGHIJKLMNOPQRSTUVWXYZ#']
     }
   }
 }
@@ -17,7 +17,7 @@ export default {
   .right{
     position: fixed;
     right: 10px;
-    top:24vh;
+    top:20vh;
     width: 20px;
   }
   .caption{
