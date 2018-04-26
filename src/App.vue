@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header> 
-    <Footer></Footer>
+    <Footer v-show='isShow'></Footer>
     <router-view/>
   </div>
 </template>
@@ -9,12 +9,22 @@
 <script>
 import Header from '@/components/header/header'
 import Footer from '@/components/footer/footer'
+import {mapState} from 'vuex'
+import funcLabelVue from './components/contacts/funcLabel.vue';
 export default {
   name: 'App',
   data(){
     return {
-      aa:'aa'
+      isShow:this.$store.state.show
     }
+  },
+  computed:{
+    ...mapState([
+          'show',
+      ]),
+  },
+  mounted(){
+    console.log(this.$store.state.show)
   },
   components:{
     Header,

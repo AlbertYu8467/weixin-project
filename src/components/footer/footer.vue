@@ -28,21 +28,24 @@ export default {
   },
   computed:{
       ...mapState([
-          'title'
+          'title',
+          'show'
       ])
   },
   methods:{
-      ...mapActions([
-          'changeTitle'
+      ...mapMutations([
+          'changeTitle',
+          'footerShow'
       ]),
       jump(path,title){
           this.isActive = path
           this.$router.push(path)
           this.$store.commit('changeTitle',title)
+          this.$store.commit('footerShow',true)
+          console.log(this.$store.state.show)
       }
   },
   mounted(){
-    
   }
 }
 </script>

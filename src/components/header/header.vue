@@ -7,6 +7,9 @@
       <div class="add-friend" v-else-if="this.title == '微信' ">
           <i class="iconfont icon-jia"></i>
       </div>
+      <div class="add-friend" v-else-if="this.title == '朋友圈' ">
+          <i class="iconfont icon-xiangji"></i>
+      </div>
   </div>
 </template>
 

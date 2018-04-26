@@ -4,6 +4,7 @@ const weixin = r => require.ensure([], () => r(require('@/components/weixin/weix
 const contacts = r => require.ensure([], () => r(require('@/components/contacts/contacts')), 'contacts')
 const find = r => require.ensure([], () => r(require('@/components/find/find')), 'find')
 const mine = r => require.ensure([], () => r(require('@/components/mine/mine')), 'mine')
+const friend = r => require.ensure([], () => r(require('@/components/find/friend/friend')), 'friend')
 
 Vue.use(Router)
 
@@ -21,12 +22,21 @@ export default new Router({
         {
             path: '/find',
             name: 'find',
-            component: find
+            component: find,
         },
         {
             path: '/mine',
             name: 'mine',
             component: mine
-        }
+        },
+        {
+            path: '/friend',
+            name: 'friend',
+            component: friend
+        },
+        {
+            path: '*',
+            redirect: '/weixin'
+        },
     ]
 })

@@ -1,7 +1,7 @@
 <template>
   <div class="find container">
     <div class="term-container">
-      <term name='朋友圈' className='icon-pengyouquan' color='#5DD500'></term>
+      <term name='朋友圈' className='icon-pengyouquan' color='#5DD500' v-on:click.native="jump('/friend','朋友圈')"></term>
     </div>
     <div class="term-container">
       <term name='扫一扫' className='icon-saoyisao' color='#00BAF2'></term>
@@ -19,7 +19,7 @@
 
 <script>
 import term from '@/components/common/term'
-import {mapMutations} from 'vuex'
+import {mapMutations,mapState} from 'vuex'
 export default {
   name: 'contacts',
   components:{
@@ -30,6 +30,23 @@ export default {
       msg: 'Welcome to Find'
     }
   },
+   computed:{
+      ...mapState([
+          'title'
+      ])
+  },
+  methods:{
+    ...mapMutations([
+      'changeTitle',
+      'footerShow'
+    ]),
+    jump(path,title){
+      this.$router.push(path)
+      this.$store.commit('changeTitle',title)
+      this.$store.commit('footerShow',false)
+      console.log(this.$store.state.footerShow)
+    }
+  }
 }
 </script>
 

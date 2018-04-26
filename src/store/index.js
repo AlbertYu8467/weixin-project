@@ -7,7 +7,8 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const state = {
-    title: '微信'
+    title: '微信',
+    show: 'true'
 }
 export default new Vuex.Store({
     state,
