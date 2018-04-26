@@ -1,13 +1,14 @@
 <template>
-  <div class="cap">C</div>
+  <div class="cap">{{initial}}</div>
 </template>
 <script>
 export default {
-  data(){
-      return {
-          msg:'caption'
-      }
-  }
+    props:['initial'],
+    data(){
+        return {
+            msg:'caption'
+        }
+    }
 }
 </script>
 <style scoped>

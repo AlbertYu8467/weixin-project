@@ -1,21 +1,20 @@
 <template>
   <div class="contact-item">
     <div class="avatar">
-        <img src="/static/celuo.jpg" alt="">
+        <img :src= "'/static/'+person.avatar"  alt="">
     </div>
-    <div class="nickname">陈刚</div>                
+    <div class="nickname">{{person.name}}</div>                
   </div>
 </template>
 <script>
 export default {
-  
+  props:['person']
 }
 </script>
-<style scoped>
+<style>
     .contact-item {
         display: flex;
         padding: 10px;
-        border-top: 1px solid #EBEBEB;
         border-bottom: 1px solid #EBEBEB;
         align-items: center;
         background: #fff;

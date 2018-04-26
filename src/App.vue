@@ -25,4 +25,8 @@ export default {
 
 <style lang="less">
 @import './style/base.less';
+.container {
+  overflow-y: auto;
+    height: 83vh;
+}
 </style>
